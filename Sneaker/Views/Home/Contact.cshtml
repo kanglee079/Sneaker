@@ -1,75 +1,52 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "Liên hệ với chúng tôi";
+    ViewBag.pageTitle = "Liên hệ với chúng tôi";
+    ViewBag.pageSubTitle = "Liên hệ";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 @Html.Partial("~/Views/Shared/Partials/_background.cshtml")
 
 <section class="ftco-section contact-section bg-light">
     <div class="container">
         <div class="row d-flex mb-5 contact-info">
-                <div class="w-100"></div>
-                <div class="col-md-3 d-flex">
-                    <div class="info bg-white p-4">
-                        <p><span>Address:</span> 123 Xô Viết Nghệ Tĩnh, P26, Quận Bình Thạnh, Tp HCM</p>
-                    </div>
-                </div>
-                <div class="col-md-3 d-flex">
-                    <div class="info bg-white p-4">
-                        <p><span>Phone:</span> <a href="tel://1234567920">+84 8248 72765</a></p>
-                    </div>
-                </div>
-                <div class="col-md-3 d-flex">
-                    <div class="info bg-white p-4">
-                        <p><span>Email:</span> <a href="mailto:hykhang792002@gmail.com">hykhang792002@gmail.com</a></p>
-                    </div>
-                </div>
-                <div class="col-md-3 d-flex">
-                    <div class="info bg-white p-4">
-                        <p><span>Website</span> <a href="#">yoursite.com</a></p>
-                    </div>
+            <div class="w-100"></div>
+            <div class="col-md-3 d-flex">
+                <div class="info bg-white p-4">
+                    <p><span>Address:</span> 123 Xô Viết Nghệ Tĩnh, P26, Quận Bình Thạnh, Tp HCM</p>
                 </div>
             </div>
-        <div class="row d-flex mb-5" style="display: flex; flex-wrap: wrap;">
-            <div class="col-md-3 d-flex" style="flex: 1; margin-right: 20px;">
-                <div class="info bg-white p-4" style="border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); transition: all 0.3s ease-in-out;">
-                    <p style="margin-bottom: 0; font-size: 18px; font-weight: 600;"><i class="fas fa-map-marker-alt" style="height: 70px; width: 70px; border-radius: 50%; font-size: 30px; background-color: #f5f5f5; color: #333; display: flex; justify-content: center; align-items: center; margin-right: 20px;"></i> Address</p>
-                    <p style="margin-bottom: 0;">123 Xô Viết Nghệ Tĩnh, P26, Quận Bình Thạnh, Tp HCM</p>
+            <div class="col-md-3 d-flex">
+                <div class="info bg-white p-4">
+                    <p><span>Phone:</span> <a href="tel://1234567920">+84 8248 72765</a></p>
                 </div>
             </div>
-            <div class="col-md-3 d-flex" style="flex: 1; margin-right: 20px;">
-                <div class="info bg-white p-4" style="border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); transition: all 0.3s ease-in-out;">
-                    <p style="margin-bottom: 0; font-size: 18px; font-weight: 600;"><i class="fas fa-phone" style="height: 70px; width: 70px; border-radius: 50%; font-size: 30px; background-color: #f5f5f5; color: #333; display: flex; justify-content: center; align-items: center; margin-right: 20px;"></i> Phone</p>
-                    <p style="margin-bottom: 0;"><a href="tel://1234567920">+84 8248 72765</a></p>
+            <div class="col-md-3 d-flex">
+                <div class="info bg-white p-4">
+                    <p><span>Email:</span> <a href="mailto:hykhang792002@gmail.com">hykhang792002@gmail.com</a></p>
                 </div>
             </div>
-            <div class="col-md-3 d-flex" style="flex: 1; margin-right: 20px;">
-                <div class="info bg-white p-4" style="border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); transition: all 0.3s ease-in-out;">
-                    <p style="margin-bottom: 0; font-size: 18px; font-weight: 600;"><i class="fas fa-envelope" style="height: 70px; width: 70px; border-radius: 50%; font-size: 30px; background-color: #f5f5f5; color: #333; display: flex; justify-content: center; align-items: center; margin-right: 20px;"></i> Email</p>
-                    <p style="margin-bottom: 0;"><a href="mailto:hykhang792002@gmail.com">hykhang792002@gmail.com</a></p>
-                </div>
-            </div>
-            <div class="col-md-3 d-flex" style="flex: 1;">
-                <div class="info bg-white p-4" style="border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); transition: all 0.3s ease-in-out;">
-                    <p style="margin-bottom: 0; font-size: 18px; font-weight: 600;"><i class="fas fa-globe" style="height: 70px; width: 70px; border-radius: 50%; font-size: 30px; background-color: #f5f5f5; color: #333; display: flex; justify-content: center; align-items: center; margin-right: 20px;"></i> Website</p>
-                    <p style="margin-bottom: 0;"><a href="#">yoursite.com</a></p>
+            <div class="col-md-3 d-flex">
+                <div class="info bg-white p-4">
+                    <p><span>Website</span> <a href="#">yoursite.com</a></p>
                 </div>
             </div>
         </div>
 
         <div class="row block-9">
             <div class="col-md-6 order-md-last d-flex">
-                <form action="#" class="bg-white p-5 contact-form">
+                <form action="@Url.Action("SendEmail", "Home")" method="post" class="bg-white p-5 contact-form">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Name">
+                        <input type="text" class="form-control" name="name" placeholder="Your Name">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Email">
+                        <input type="email" class="form-control" name="email" placeholder="Your Email">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Subject">
+                        <input type="text" class="form-control" name="subject" placeholder="Subject">
                     </div>
                     <div class="form-group">
-                        <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                        <textarea name="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
@@ -78,7 +55,7 @@
             </div>
 
             <div class="col-md-6 d-flex">
-                <div id="map" class="bg-white"></div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.2198047365596!2d106.70621407560155!3d10.794470258859477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528b1821ddc3b%3A0xa12ac5053535f69e!2zMTIzIFjDtCBWaeG6v3QgTmdo4buHIFTEqW5oLCBQaMaw4budbmcgMTcsIELDrG5oIFRo4bqhbmgsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1685951657636!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </div>

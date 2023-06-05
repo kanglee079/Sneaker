@@ -333,9 +333,16 @@ namespace Sneaker.Controllers
                 Response.StatusCode = 404;
                 return null;
             }
-            db.DonDatHangs.DeleteOnSubmit(item);
+
+            // Thực hiện xóa đối tượng item
+            db.ChiTietDatHangs.DeleteAllOnSubmit(item.ChiTietDatHangs); // Xóa các chi tiết đặt hàng liên quan (nếu cần)
+            db.DonDatHangs.DeleteOnSubmit(item); // Xóa đơn hàng
+
+            // Thực hiện cập nhật cơ sở dữ liệu
             db.SubmitChanges();
+
             return RedirectToAction("DonDatHang");
         }
+
     }
 }
