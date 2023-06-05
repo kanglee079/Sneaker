@@ -1,0 +1,93 @@
+﻿@using Sneaker.Models;
+@model List<Cart>
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section class="ftco-section ftco-cart">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ftco-animate">
+                <div class="cart-list">
+                    <table class="table">
+                        <thead class="thead-primary">
+                            <tr class="text-center">
+                                <th>&nbsp;</th>
+                                <th>&nbsp;</th>
+                                <th>Sản phẩm</th>
+                                <th>Giá bán</th>
+                                <th>Số lượng</th>
+                                <th>Thành tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                using (Html.BeginForm("UpdateCart", "Cart", new { @iMaSP = item.iMaSP }))
+                                {
+                                    <tr class="text-center">
+                                        <td class="product-remove"><a href="@Url.Action("DeleteCart", "Cart", new { @iMaSP = item.iMaSP })"><span class="ion-ios-close"></span></a></td>
+
+                                        <td class="image-prod"><div class="img" style="background-image:url(@Url.Content("~/Assets/Images/Products/" + item.sAnhDD));"></div></td>
+
+                                        <td class="product-name">
+                                            <h3>@item.sTenSP</h3>
+                                            @*<p>Far far away, behind the word mountains, far from the countries</p>*@
+                                        </td>
+
+                                        <td class="price">@String.Format("{0:0,0}", item.dGiaBan)</td>
+
+                                        <td class="quantity">
+                                            <div class="input-group mb-3">
+                                                <input type="text" name="txtSoLuong" class="quantity form-control input-number" value="@item.iSoLuong" min="1" max="100">
+                                                <div class="input-group-append">
+                                                    <button type="submit" class="btn btn-primary" style="background-color: #B5B5B5; border: none; font-size: 16px; color: white; padding: 10px 20px;">Cập nhật</button>
+                                                </div>
+
+                                            </div>
+                                        </td>
+
+                                        <td class="total">@String.Format("{0:0,0}", item.dThanhTien)</td>
+                                    </tr><!-- END TR-->
+                                }
+                            }
+                        </tbody>
+                    </table>
+                    <div class="shoping-cart-buttons">
+                        <a href="@Url.Action("Index","Shop")" class="btn btn-primary btn-continue-shopping">Tiếp tục mua sắm</a>
+                        <a href="@Url.Action("DeleteAllCart","Cart")" class="btn btn-primary btn-continue-shopping">Xóa giỏ hàng</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-start">
+            <div class="col col-lg-5 col-md-6 mt-5 cart-wrap ftco-animate">
+                <div class="cart-total mb-3">
+                    <h3>Hóa đơn</h3>
+                    <p class="d-flex">
+                        <span>Tổng tiền</span>
+                        <span>@String.Format("{0:0,0}", ViewBag.TotalAmount)</span>
+                    </p>
+                    <p class="d-flex">
+                        <span>Phí vận chuyển</span>
+                        <span>0</span>
+                    </p>
+                    <p class="d-flex">
+                        <span>Mã giảm giá</span>
+                        <span>0</span>
+                    </p>
+                    <hr>
+                    <p class="d-flex total-price">
+                        <span>Tổng tiền</span>
+                        <span>@String.Format("{0:0,0}", ViewBag.TotalAmount)</span>
+                    </p>
+                </div>
+                <p class="text-center"><a href="@Url.Action("Order","Cart")" class="btn btn-primary py-3 px-4">Tiếp tục</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+

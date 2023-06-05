@@ -1,0 +1,48 @@
+﻿@model Sneaker.Models.ThuongHieu
+
+@{
+    ViewBag.Title = "ChiTietThuongHieu";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<br />
+<br />
+<h2 style="text-align:center;font-weight:bold">Chi tiết thương hiệu</h2>
+
+<div>
+    <h4>Thương hiệu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã thương hiệu:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaThuongHieu)
+        </dd>
+
+        <dt>
+            Tên thương hiệu:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TenThuongHieu)
+        </dd>
+
+        <dt>
+            Logo thương hiệu:
+        </dt>
+        <dd>
+            @if (!string.IsNullOrEmpty(Model.LogoThuongHieu))
+            {
+                <img src="@Url.Content("~/Assets/Images/Products/"+Model.LogoThuongHieu)" width="20%" alt="Logo" />
+            }
+            else
+            {
+                <span>No logo available</span>
+            }
+        </dd>
+    </dl>
+</div>
+<div>
+    <a style="font-weight:bold;color:black;padding-left:120px" href="@Url.Action("ThuongHieu","Admin")"><i class="fa fa-arrow-left"> Trở lại</i></a>
+    <a style="font-weight:bold;color:black;padding-left:120px" href="@Url.Action("SuaThuongHieu","Admin", new { id = Model.MaThuongHieu })"><i class="fa fa-edit"> Chỉnh sửa</i></a>
+</div>

@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.Partial("~/Views/Shared/Partials/_background.cshtml")
+<section class="ftco-section ftco-no-pt ftco-no-pb">
+    <div class="container">
+        @Html.Partial("~/Views/Shared/Partials/_services.cshtml")
+    </div>
+</section>
+
+<section class="ftco-section ftco-no-pb ftco-no-pt bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url('@Url.Content("~/Assets/Images/Background/about.jpg")');">
+                <a href="https://vimeo.com/315891633" class="icon popup-vimeo d-flex justify-content-center align-items-center">
+                    <span class="icon-play"></span>
+                </a>
+            </div>
+            <div class="col-md-7 py-md-5 wrap-about pb-md-5 ftco-animate">
+                <div class="heading-section-bold mb-4 mt-md-5">
+                    <div class="ml-md-0">
+                        <h2 class="mb-4">Thành lập từ năm 2001</h2>
+                    </div>
+                </div>
+                <div class="pb-md-5 pb-4">
+                    <p>Năm 2001, một nhóm bạn trẻ đam mê giày sneaker tại TP. Hồ Chí Minh thành lập cửa hàng bán giày sneaker. Họ tìm kiếm những nguồn cung cấp sản phẩm chất lượng cao và thuê một cửa hàng nhỏ để bắt đầu kinh doanh. Nhờ sự nỗ lực và quảng bá thông qua các trang mạng xã hội và sự kiện thể thao, cửa hàng đã nhanh chóng trở thành một trong những cửa hàng bán giày sneaker phổ biến và uy tín nhất tại TP. Hồ Chí Minh. Cửa hàng mở rộng mạng lưới bán hàng của mình và trở thành một thương hiệu giày sneaker nổi tiếng trên toàn thế giới.</p>
+                    <p><a href="@Url.Action("Index", "Shop")" class="btn btn-primary">Shop now</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@Html.Partial("~/Views/Shared/Partials/_feedback.cshtml")
+@Html.Partial("~/Views/Shared/Partials/_followus.cshtml")
+

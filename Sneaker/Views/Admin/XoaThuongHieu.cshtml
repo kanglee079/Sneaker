@@ -1,0 +1,39 @@
+﻿@model Sneaker.Models.ThuongHieu
+
+@{
+    ViewBag.Title = "XoaThuongHieu";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<br />
+<br />
+<h2 style="text-align:center;font-weight:bold">Xóa thương hiệu</h2>
+
+<div style="padding-left:70px">
+    <dl class="dl-horizontal">
+        <dt>
+            Mã thương hiệu:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaThuongHieu)
+        </dd>
+        <dt>
+            Tên thương hiệu:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TenThuongHieu)
+        </dd>
+    </dl>
+</div>
+<div style="padding-left:70px">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <button style="font-weight: bold; color: black " type="submit"><i class="fa fa-trash"> Xóa</i></button>
+            <a style="font-weight:bold;color:black;padding-left:120px" href="@Url.Action("ThuongHieu","Admin")"><i class="fa fa-arrow-left"> Trở lại</i></a>
+        </div>
+    }
+</div>
+
