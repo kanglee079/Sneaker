@@ -172,6 +172,14 @@ namespace Sneaker.Controllers
             body.AppendLine($"Tên khách hàng: {order.KhachHang.HoTen}");
             body.AppendLine($"Mã khách hàng: {order.MaKH}");
             body.AppendLine($"Thời gian đặt hàng: {order.NgayDat}");
+            body.AppendLine("Danh sách sản phẩm:");
+
+            foreach (var chiTiet in order.ChiTietDatHangs)
+            {
+                body.AppendLine($"- Tên sản phẩm: {chiTiet.SanPham.TenSP}");
+                body.AppendLine($"  Số lượng: {chiTiet.SoLuong}");
+                body.AppendLine($"  Đơn giá: {chiTiet.DonGia}");
+            }
 
             var smtp = new SmtpClient
             {
@@ -204,7 +212,16 @@ namespace Sneaker.Controllers
             body.AppendLine($"Tên khách hàng: {order.KhachHang.HoTen}");
             body.AppendLine($"Mã khách hàng: {order.MaKH}");
             body.AppendLine($"Thời gian đặt hàng: {order.NgayDat}");
-            body.AppendLine($"Yikes cảm ơn bạn đã tin tưởng mua sắm tại của hàng.");
+            body.AppendLine("Danh sách sản phẩm:");
+
+            foreach (var chiTiet in order.ChiTietDatHangs)
+            {
+                body.AppendLine($"- Tên sản phẩm: {chiTiet.SanPham.TenSP}");
+                body.AppendLine($"  Số lượng: {chiTiet.SoLuong}");
+                body.AppendLine($"  Đơn giá: {chiTiet.DonGia}");
+            }
+
+            body.AppendLine("Yikes cảm ơn bạn đã tin tưởng mua sắm tại cửa hàng.");
 
             var smtp = new SmtpClient
             {
