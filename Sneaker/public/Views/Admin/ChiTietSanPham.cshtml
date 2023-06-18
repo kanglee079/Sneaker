@@ -1,0 +1,54 @@
+﻿@model Sneaker.Models.SanPham
+
+
+@{
+    ViewBag.Title = "ChiTietSanPham";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<br />
+<br />
+<h2 style="text-align:center;font-weight:bold">Chi tiết sản phẩm</h2>
+
+<div style="padding-left:70px">
+    <dl class="dl-horizontal">
+        <dt>
+            Tên sản phẩm:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TenSP)
+        </dd>
+        <dt>
+            Đơn giá:
+        </dt>
+        <dd>
+            @String.Format("{0:0,0}", Model.GiaBan) VNĐ
+        </dd>
+        <dt>
+            Mô tả:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+        <dt>
+            Ảnh đại diện:
+        </dt>
+        <dd>
+            <img src="@Url.Content("~/Assets/Images/Products/"+Model.AnhDD)" width="25%" />
+        </dd>
+        <dt>
+            Thương hiệu:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ThuongHieu.TenThuongHieu)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a style="font-weight:bold;color:black;padding-left:120px" href="@Url.Action("SanPham","Admin")"><i class="fa fa-arrow-left"> Trở lại</i></a>
+    <a style="font-weight:bold;color:black;padding-left:120px" href="@Url.Action("SuaSanPham","Admin", new { id = Model.MaSP })"><i class="fa fa-edit"> Chỉnh sửa</i></a>
+</div>
+
+
+

@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<table align="center" border="2" cellpadding="5">
+    <tr align="center" , style="height:50px">
+        <th colspan="2">ĐĂNG KÝ THÀNH VIÊN</th>
+    </tr>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <tr style="height:60px">
+            <td>Họ và tên khách hàng: </td>
+            <td>
+                @Html.TextBox("HoTenKH")
+                @ViewData["loi1"]
+            </td>
+        </tr>
+        <tr style="height:60px">
+            <td>Tên đăng nhập: </td>
+            <td>
+                @Html.TextBox("TenDN")
+                @ViewData["loi2"]
+            </td>
+        </tr>
+        <tr style="height:60px">
+            <td>Mật Khẩu: </td>
+            <td>
+                @Html.Password("MatKhau")
+                @ViewData["loi3"]
+            </td>
+        </tr>
+        <tr style="height:60px">
+            <td>Mật khẩu nhập lại: </td>
+            <td>
+                @Html.Password("MatKhauNhapLai")
+                @ViewData["loi4"]
+            </td>
+        </tr>
+        <tr style="height:60px">
+            <td>Địa chỉ: </td>
+            <td>
+                @Html.TextBox("DiaChi")
+                @ViewData["loi5"]
+            </td>
+        </tr>
+        <tr style="height:60px">
+            <td>Email: </td>
+            <td>
+                @Html.TextBox("Email")
+                @ViewData["loi6"]
+            </td>
+        </tr>
+        <tr style="height:60px">
+            <td>Điện thoại: </td>
+            <td>
+                @Html.TextBox("DienThoai")
+                @ViewData["loi7"]
+            </td>
+        </tr>
+        <tr align="center" style="height:50px">
+            <th colspan="2">
+                <button type="submit" class="btn btn-primary btn-sm" style="padding: 10px 20px; font-size: 14px;">
+                    Đăng ký
+                </button>
+            </th>
+        </tr>
+    }
+</table>
+<div style="text-align:center;padding-top:5px;padding-bottom:5px"><a href="@Url.Action("Login","Member")"><i class="fa fa-user"> Đã có tài khoản? Hãy đăng nhập.</i></a></div>

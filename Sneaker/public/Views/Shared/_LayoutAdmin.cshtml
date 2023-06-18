@@ -4,7 +4,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type="text/javascript" src="https://ahachat.com/customer-chats/customer_chat_51V1BdyBSJ647ee4b618813.js"></script>
     <title>Yikes</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -64,12 +63,12 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="@Url.Action("Index", "Home")" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="@Url.Action("Index", "Shop")" class="nav-link">Shop</a></li>
-                    <li class="nav-item"><a href="@Url.Action("About", "Home")" class="nav-link">About</a></li>
+                    <li class="nav-item active"><a href="@Url.Action("DonDatHang", "Admin")" class="nav-link">Đơn hàng</a></li>
+                    <li class="nav-item"><a href="@Url.Action("SanPham", "Admin")" class="nav-link">Sản phẩm</a></li>
+                    <li class="nav-item"><a href="@Url.Action("ThuongHieu", "Admin")" class="nav-link">Thương hiệu</a></li>
                     @*<li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>*@
-                    <li class="nav-item"><a href="@Url.Action("Contact", "Home")" class="nav-link">Contact</a></li>
-                    @Html.Action("CartPartial", "Cart")
+                    <li class="nav-item"><a href="@Url.Action("KhachHang", "Admin")" class="nav-link">Khách hàng</a></li>
+                    @*@Html.Action("CartPartial", "Cart")
                     @if (Session["TaiKhoan"] != null)
                     {
                         <li class="nav-item dropdown">
@@ -88,7 +87,7 @@
                         <li class="nav-item">
                             <a href="@Url.Action("Login", "Member")" class="nav-link">Login</a>
                         </li>
-                    }
+                    }*@
 
 
                 </ul>
@@ -196,7 +195,6 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="/Assets/Customer/js/google-map.js"></script>
     <script src="/Assets/Customer/js/main.js"></script>
-    <script src="~/Scripts/firebase.js"></script>
 
 </body>
 </html>

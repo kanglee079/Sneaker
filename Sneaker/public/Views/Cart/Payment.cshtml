@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Payment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .payment-button {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .momo-button {
+        background-color: #e91e63;
+    }
+
+    .cash-button {
+        background-color: #4caf50;
+    }
+
+    .payment-button:hover {
+        background-color: #333;
+    }
+
+    .payment-button:active {
+        transform: translateY(2px);
+    }
+</style>
+
+<div style="margin: 100px auto; max-width: 400px;">
+    <h2 style="text-align: center;">Chọn phương thức thanh toán</h2>
+
+    <div style="text-align: center;">
+        <button class="payment-button momo-button" onclick="redirectToMoMo()">MoMo</button>
+        <button class="payment-button cash-button" onclick="proceedCash()">Tiền mặt</button>
+    </div>
+</div>
+
+<script>
+    function redirectToMoMo() {
+        window.location.href = "Momo";
+    }
+
+    function proceedCash() {
+        window.location.href = "OrderSuccess";
+    }
+</script>

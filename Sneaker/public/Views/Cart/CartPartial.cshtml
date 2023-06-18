@@ -1,0 +1,5 @@
+﻿<li class="nav-item cta cta-colored">
+    <a href="@Url.Action("Cart", "Cart")" class="nav-link">
+        <span class="icon-shopping_cart"></span>@ViewBag.TotalQuantity - @String.Format("{0:0,0}", ViewBag.TotalAmount)
+    </a>
+</li>
